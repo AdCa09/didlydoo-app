@@ -28,7 +28,7 @@ const submitButton = document.getElementById('addDate');
 const eventTitle = document.getElementById('eventName');
 const eventDescription = document.getElementById('eventDescri');
 
-const authorEvent = document.getElementById('newEventName')
+const authorEvent = document.getElementById('newAuthorName')
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -66,3 +66,5 @@ function isInputListEmpty() {
     });
     return isEmpty;
 }
+
+
