@@ -28,7 +28,7 @@ const submitButton = document.getElementById('addDate');
 const eventTitle = document.getElementById('eventName');
 const eventDescription = document.getElementById('eventDescri');
 
-const authorEvent = document.getElementById('authorName')
+const authorEvent = document.getElementById('newEventName')
 
 submitButton.addEventListener("click", (e) => {
     e.preventDefault();
