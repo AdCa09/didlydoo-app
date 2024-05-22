@@ -44,7 +44,7 @@
 //   }
 
 export function saveThemeToLocalstorage(theme) {
-  
+
   localStorage.setItem("theme", JSON.stringify(theme));
 }
 
@@ -58,11 +58,14 @@ export function loadThemeFromLocalStorage() {
 export function lightMode() {
   const mode = document.querySelector(".mode-button");
   const body = document.querySelector("body");
+  const buttonAdd = document.getElementById("addEvent");
   const svgs = Array.from(document.querySelectorAll(".svg"));
   // localStorage.setItem("darkmode", false);
   document.documentElement.setAttribute("data-theme", "light");
   body.classList.add("light");
   body.classList.remove("dark");
+  buttonAdd.classList.add("light");
+  buttonAdd.classList.remove("dark");
   svgs.forEach((svg) => {
     svg.classList.add("svgLightMode");
     svg.classList.remove("svgDarkMode");//remove class to change color to light mode
@@ -73,10 +76,13 @@ export function lightMode() {
 export function darkMode() {
   const mode = document.querySelector(".mode-button");
   const body = document.querySelector("body");
+  const buttonAdd = document.getElementById("addEvent");
   const svgs = Array.from(document.querySelectorAll(".svg"));
   document.documentElement.setAttribute("data-theme", "dark");
   body.classList.add("dark");
   body.classList.remove("light");
+  buttonAdd.classList.add("dark");
+  buttonAdd.classList.remove("light");
   svgs.forEach((svg) => {
     svg.classList.add("svgDarkMode");
     svg.classList.remove("svgLightMode");
