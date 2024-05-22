@@ -1,6 +1,18 @@
 body {
-    background: linear-gradient(180deg, #E1C8FF 0%, #9E77CE 100%); //gradient light
-    position:relative;
-    height:100vh;
-    width:100vw;
+    background-image: var(--colorBodyBackgroundLight);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100dvh;
+    color: var(--colorTextLight);
+}
+
+body.light {
+    background-image: var(--colorBodyBackgroundLight);
+    color: var(--colorTextLight);
+}
+
+body.dark {
+    background-image: var(--colorBodyBackgroundDark);
+    color: var(--colorTextDark);
+
 }

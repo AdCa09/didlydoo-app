@@ -1,0 +1,14 @@
+@import "colors";
+html[data-theme="light"] {
+    --colorBodyBackgroundLight: #{ $colorBodyBackgroundLight };
+    --colorTextLight: #{ $colorBodyBackgroundLight };
+    --filterSvgLight: #{ $filterSvgLight };
+    --buttonBorderLight: #{ $buttonBorderLight };
+}
+
+html[data-theme="dark"] {
+    --colorBodyBackgroundDark: #{ $colorBodyBackgroundDark };
+    --colorTextDark: #{ $colorBodyBackgroundDark };
+    --filterSvgDark: #{ $filterSvgDark };
+    --buttonBorderDark: #{ $buttonBorderDark };
+}
