@@ -15,9 +15,7 @@
 
 <body>
     <header>
-        <h1 class="header_title"></h1>
-        <button class="header_button">Add event</button>
-        <div id="details_event"></div>        <img src="assets/images/logo.svg" alt="Didlydoo logo" class="logo svg">
+        <img src="assets/images/logo.svg" alt="Didlydoo logo" class="logo svg">
         <img src="assets/images/name.svg" alt="Didlidoo full name logo" class="name svg">
         <button class="mode"><img src="assets/images/mode-dark.svg" alt="Mode button" class="mode-button svg"></button>
     </header>
@@ -32,25 +30,35 @@
                     <span class="close">&times;</span>
                     <h2>Create a new event</h2>
                     <label for="eventName">Name of the event</h3>
-                    <input type="text" id="eventName" placeholder="Type the name of the event here">
-                    <label for="eventDescri">Description of the event</h3>
-                    <textarea id="eventDescri" rows="4" cols="50" placeholder="Describe the event here"></textarea>
-                    <label for="eventDate">Start date:</label>
-                    <input type="date" id="eventDate" min="2024-01-01" max="2050-12-31" />
-                    <input type="button" value="Add another date" id="addDate">
-                    
+                        <input type="text" id="eventName" placeholder="Type the name of the event here">
+                        <label for="eventDescri">Description of the event</h3>
+                            <textarea id="eventDescri" rows="4" cols="50"
+                                placeholder="Describe the event here"></textarea>
+                            <label for="eventDate">Start date:</label>
+                            <input type="date" id="eventDate" min="2024-01-01" max="2050-12-31" />
+                            <input type="button" value="Add another date" id="addDate">
+
                 </div>
             </section>
             <section id="eventsList">
-            <!--DOM GOES HERE-->
+                <!--DOM GOES HERE-->
             </section>
         </article>
     </main>
 
     <footer>
-        <a href="" class="githubLink"><div class="bubbleName">Tasha</div><div class="arrowDown"></div><img src="" alt="github logo"></a>
-        <a href="" class="githubLink"><div class="bubbleName">Adrien</div><div class="arrowDown"></div><img src="" alt="github logo"></a>
-        <a href="" class="githubLink"><div class="bubbleName">Julie</div><div class="arrowDown"></div><img src="" alt="github logo"></a>
+        <a href="" class="githubLink">
+            <div class="bubbleName">Tasha</div>
+            <div class="arrowDown"></div><img src="assets/images/github.svg" alt="github logo" class="svg">
+        </a>
+        <a href="" class="githubLink">
+            <div class="bubbleName">Adrien</div>
+            <div class="arrowDown"></div><img src="assets/images/github.svg" alt="github logo" class="svg">
+        </a>
+        <a href="" class="githubLink">
+            <div class="bubbleName">Julie</div>
+            <div class="arrowDown"></div><img src="assets/images/github.svg" alt="github logo" class="svg">
+        </a>
     </footer>
 </body>
 
