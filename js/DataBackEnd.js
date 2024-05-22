@@ -1,17 +1,18 @@
 // POST method nouvel événement
 export function createEvent(newEvent) {
-    const server = "http://localhost:3000/api/events/";
-
+    const server = "http://localhost:3000/api/events/"
     fetch(server, {
-        method: "POST",
+        method: 'POST',
         headers: {
-            "Content-Type": "apllication/json,"
+            'Content-Type': 'application/json',
         },
         body: JSON.stringify(newEvent)
     }).catch((error) => {
-        console.error("Une erreur s'est produite", error);
+        console.error('Error:', error);
     });
 }
+
+
 
 //GET method 
 
