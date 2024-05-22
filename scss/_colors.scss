@@ -1,0 +1,13 @@
+
+//light mode
+$colorBodyBackgroundLight: linear-gradient(#E1C8FF, #9E77CE);
+$colorTextLight: #482151;
+$filterSvgLight: brightness(0) saturate(100%) invert(16%) sepia(11%) saturate(3651%) hue-rotate(245deg) brightness(98%) contrast(95%);
+$buttonBorderLight: linear-gradient(to bottom, #402866, #9E77CE, 1);//border-width: 2px; border-style: solid; border-image: 
+
+//dark mode
+$colorBodyBackgroundDark: linear-gradient(#402866, #482151);
+$colorTextDark: #fff;
+$filterSvgDark: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(181deg) brightness(103%) contrast(103%);
+$buttonBorderDark: linear-gradient(to bottom, #E1C8FF, #9E77CE, 1);//border-width: 2px; border-style: solid; border-image: 
+

@@ -1,38 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./js/script.js"></script>
+    <title>Didlydoo</title>
+    <link rel="icon" href="assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <script type="module" src="./js/script.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
     <header>
-
+        <img src="assets/images/logo.svg" alt="Didlydoo logo" class="logo svg">
+        <img src="assets/images/name.svg" alt="Didlidoo full name logo" class="name svg">
+        <button class="mode"><img src="assets/images/mode-dark.svg" alt="Mode button" class="mode-button svg"></button>
     </header>
-
     <main>
-        <article>
-            <input type="button" value="New event" id="addEvent">
-            <!-- The Modal -->
-            <section id="formModal" class="formModal">
-                <!-- Modal content -->
-                <div class="formContent">
-                    <span class="close">&times;</span>
-                    <h2>Create a new event</h2>
-                    <label for="eventName">Name of the event</h3>
-                    <input type="text" id="eventName" placeholder="Type the name of the event here">
-                    <label for="eventDescri">Description of the event</h3>
-                    <textarea id="eventDescri" rows="4" cols="50" placeholder="Describe the event here"></textarea>
-                    <label for="eventDate">Start date:</label>
-                    <input type="date" id="eventDate" min="2024-01-01" max="2050-12-31" />
-                </div>
-            </section>
-            <section id="eventsList">
-            <!--DOM GOES HERE-->
-            </section>
-        </article>
+
     </main>
 
     <footer>
@@ -41,4 +29,5 @@
         <a href="" class="githubLink"><div class="bubbleName">Julie</div><div class="arrowDown"></div><img src="" alt="github logo"></a>
     </footer>
 </body>
+
 </html>
