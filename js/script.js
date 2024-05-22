@@ -20,3 +20,35 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
+
+//Create Div
+function createDiv(type,parent,content,className) {
+    const newDiv=document.createElement(type);
+    if (content!=null) {
+      newDiv.innerHTML=content;
+    }
+    if (className!=null) {
+      newDiv.classList.add(className);
+    }
+    parent.appendChild(newDiv);
+    return newDiv;
+}
+
+//Manage form
+
+const formContent = document.getElementsByClassName("formContent");
+let newEventName = document.getElementById('newEventName');
+let newEventDescri = document.getElementById('newEventDescri')
+let newEventDate = document.getElementById('newEventDate');
+let clickCount = 0;
+
+//Add another date
+const addNewDate = () => {
+    clickCount++;
+    let divName = newEventDate + clickCount;
+    console.log(divName);
+    createDiv("input", formContent, '', '');
+};
+
+document.getElementById("addDate").addEventListener("click", addNewDate);
+
