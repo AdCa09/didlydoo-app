@@ -56,7 +56,7 @@ export function loadThemeFromLocalStorage() {
 
 export function lightMode() {
   const mode = document.querySelector(".mode-button");
-  const body =document.querySelector("body");
+  const body = document.querySelector("body");
   const svgs = Array.from(document.querySelectorAll(".svg"));
   // localStorage.setItem("darkmode", false);
   document.documentElement.setAttribute("data-theme", "light");
@@ -71,7 +71,7 @@ export function lightMode() {
 
 export function darkMode() {
   const mode = document.querySelector(".mode-button");
-  const body =document.querySelector("body");
+  const body = document.querySelector("body");
   const svgs = Array.from(document.querySelectorAll(".svg"));
   document.documentElement.setAttribute("data-theme", "dark");
   body.classList.add("dark");
@@ -82,3 +82,29 @@ export function darkMode() {
   });
   mode.src = "assets/images/mode-light.svg";
 }
+
+//local storage darkmode
+
+import { saveThemeToLocalstorage } from "./darkmode.js";
+import { loadThemeFromLocalStorage } from "./darkmode.js";
+import { lightMode } from "./darkmode.js";
+import { darkMode } from "./darkmode.js";
+
+
+window.addEventListener('DOMContentLoaded', loadThemeFromLocalStorage);
+
+const modeButton = document.querySelector(".mode");
+const html = document.querySelector("html");
+
+modeButton.addEventListener("click", () => {
+  const dataTheme = html.getAttribute("data-theme");
+  if (dataTheme === "light") {
+    html.setAttribute("data-theme", "dark");
+    darkMode();
+    saveThemeToLocalstorage("dark");
+  } else {
+    html.setAttribute("data-theme", "light");
+    lightMode();
+    saveThemeToLocalstorage("light");
+  }
+})
