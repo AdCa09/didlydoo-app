@@ -30,13 +30,15 @@
                     <span class="close">&times;</span>
                     <h2>Create a new event</h2>
                     <label for="eventName">Name of the event</label>
-                    <input type="text" id="eventName" placeholder="Type the name of the event here">
+                    <input type="text" id="newEventName" placeholder="Type the name of the event here">
+                    <label for="eventName">Creator of the event</label>
+                    <input type="text" id="newEventName" placeholder="Type your name here">
                     <label for="eventDescri">Description of the event</label>
-                    <textarea id="eventDescri" rows="4" cols="50" placeholder="Describe the event here"></textarea>
+                    <textarea id="newEventDescri" rows="4" cols="50" placeholder="Describe the event here"></textarea>
                     <label for="eventDate">Start date:</label>
-                    <input type="date" id="eventDate" min="2024-01-01" max="2050-12-31" />
+                    <input type="date" id="newEventDate" min="2024-01-01" max="2050-12-31" />
                     <input type="button" value="Add another date" id="addDate">
-
+                    <input type="submit" value="Add your event to the list">
                 </div>
             </section>
             <section id="eventsList">
