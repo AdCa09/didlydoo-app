@@ -2,7 +2,7 @@ html[data-theme=light] {
   --colorBodyBackgroundLight: linear-gradient(#E1C8FF, #9E77CE);
   --colorTextLight: #482151;
   --filterSvgLight: brightness(0) saturate(100%) invert(16%) sepia(11%) saturate(3651%) hue-rotate(245deg) brightness(98%) contrast(95%);
-  --buttonBorderLight: linear-gradient(to bottom, #402866, #9E77CE, 1);
+  --buttonBorderLight: linear-gradient(to bottom, #9E77CE, #402866);
   --colorButtonBackgroundLight: #E1C8FF;
   --colorEventBackgroundLight: #fff;
   --colorButtonShadowLight: 4px 4px 4px rgba(64, 40, 102, 0.5);
@@ -13,8 +13,8 @@ html[data-theme=dark] {
   --colorBodyBackgroundDark: linear-gradient(#402866, #482151);
   --colorTextDark: #fff;
   --filterSvgDark: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(181deg) brightness(103%) contrast(103%);
-  --buttonBorderDark: linear-gradient(to bottom, #E1C8FF, #9E77CE, 1);
-  --colorButtonBackgroundDark: #482151;
+  --buttonBorderDark: linear-gradient(to bottom, #E1C8FF, #9E77CE);
+  --colorButtonBackgroundDark: #72539F;
   --colorEventBackgroundDark: #72539F;
   --colorButtonShadowDark: 4px 4px 4px rgba(0, 0, 0, 0.5);
   --colorEventShadowDark: 5px 5px 5px rgba(0, 0, 0, 0.5);
@@ -26,6 +26,7 @@ body {
   background-repeat: no-repeat;
   min-height: 100dvh;
   color: var(--colorTextLight);
+  margin: 0;
 }
 
 body.light {
@@ -38,18 +39,52 @@ body.dark {
   color: var(--colorTextDark);
 }
 
+#addEvent {
+  font-family: Lalezar;
+  font-size: 1rem;
+  text-transform: lowercase;
+  background-color: var(--colorButtonBackgroundLight);
+  color: var(--colorTextLight);
+  box-shadow: var(--colorButtonShadowLight);
+  border: 2px solid var(--colorTextLight);
+  border: none;
+  border-radius: 0.8rem;
+  width: 30dvw;
+  height: 6dvw;
+  text-align: center;
+}
+
+input.light {
+  background-color: var(--colorButtonBackgroundLight);
+  color: var(--colorTextLight);
+  box-shadow: var(--colorButtonShadowLight);
+  border: 2px solid var(--colorTextLight);
+}
+
+input.dark {
+  background-color: var(--colorButtonBackgroundDark) !important;
+  color: var(--colorTextDark);
+  box-shadow: var(--colorButtonShadowDark) !important;
+  border: 2px solid var(--colorTextDark);
+}
+
 footer {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  margin: 2dvw auto;
 }
 
 .contact {
-  padding: 1dvw;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+}
+
+.github {
+  padding: 1dvw;
 }
 
 header {
