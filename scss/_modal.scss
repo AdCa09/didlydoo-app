@@ -1,0 +1,21 @@
+#formModal {
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #000; /* Fallback color */
+    background-color: #0000006b; /* Black w/ opacity */
+
+    .formContent {
+        background-color: #fff;
+        position:relative;
+        margin:auto;
+        width:80%;
+        border: 3px solid;
+        border-color: $colorTextLight;
+        color: $colorTextLight;
+    }
+}
