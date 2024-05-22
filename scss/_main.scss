@@ -1,0 +1,18 @@
+body {
+    background-image: var(--colorBodyBackgroundLight);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100dvh;
+    color: var(--colorTextLight);
+}
+
+body.light {
+    background-image: var(--colorBodyBackgroundLight);
+    color: var(--colorTextLight);
+}
+
+body.dark {
+    background-image: var(--colorBodyBackgroundDark);
+    color: var(--colorTextDark);
+
+}
