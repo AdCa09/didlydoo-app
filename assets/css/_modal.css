@@ -8,6 +8,7 @@
   overflow: auto; /* Enable scroll if needed */
   background-color: #000; /* Fallback color */
   background-color: rgba(0, 0, 0, 0.4196078431); /* Black w/ opacity */
+  display: none;
 }
 #formModal .formContent {
   background-color: #fff;
