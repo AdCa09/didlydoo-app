@@ -104,8 +104,25 @@ header {
   background-color: #fff;
   position: relative;
   margin: auto;
+  margin-top: 20%;
   width: 80%;
   border: 3px solid;
-  border-color: #482151;
-  color: #482151;
+  border-color: var(--colorTextLight);
+  color: var(--colorTextLight);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  box-shadow: var(--colorEventShadowLight);
+}
+#formModal .formContent .close {
+  color: var(--colorTextLight);
+  position: absolute;
+  right: 5%;
+  font-size: 28px;
+  font-weight: bold;
+}
+#formModal .formContent h2 {
+  text-align: center;
+  font-variant: small-caps;
 }
