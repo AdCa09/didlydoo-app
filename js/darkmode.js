@@ -44,11 +44,12 @@
 //   }
 
 export function saveThemeToLocalstorage(theme) {
-  localStorage.setItem("theme", theme);
+  
+  localStorage.setItem("theme", JSON.stringify(theme));
 }
 
 export function loadThemeFromLocalStorage() {
-  const savedTheme = localStorage.getItem("theme");
+  const savedTheme = JSON.parse(localStorage.getItem("theme"));
   if (savedTheme) {
     html.setAttribute("data-theme", savedTheme);
   }

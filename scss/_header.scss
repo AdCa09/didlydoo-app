@@ -2,9 +2,9 @@ header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center; 
-    height: 10dvh;    
-}
+    align-items: center;
+    height: 10dvh;
+    }
 
 .mode-button {
     padding: 2dvh;
@@ -12,14 +12,18 @@ header {
     cursor: pointer;
     transition: 0.5s;
 
+
     &:hover {
         transform: scale(130%) rotate(-45deg);
-       
     }
 }
 
-.logo, .name, .mode-button {
-    padding: 2dvh;
+
+
+.logo,
+.name,
+.mode-button {
+    padding: 2.5dvw;
 }
 
 .mode {
