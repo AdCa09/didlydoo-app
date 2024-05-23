@@ -107,6 +107,7 @@ function createDiv(type,parent,content,className) {
 //Manage form
 
 const formContent = document.getElementById("formContent");
+const possibleDates = document.getElementById('possibleDates');
 let newEventName = document.getElementById('newEventName');
 let newEventDescri = document.getElementById('newEventDescri')
 let newEventDate = document.getElementById('newEventDate');
@@ -117,9 +118,25 @@ const addNewDate = () => {
     clickCount++;
     let divName = newEventDate.id + clickCount;
     console.log(divName);
-    createDiv("input", formContent, '', divName);
-    let addedDate = document.getElementById(divName);
-    addedDate.setAttribute("type", "date");
+   const newDateInput = createDiv("input", possibleDates, '', divName);
+   newDateInput.setAttribute("id", divName);
+   newDateInput.setAttribute("type", "date");
+   newDateInput.style.display = 'block';
+
+   let deleteDateId = divName + 'del';
+   const deleteDate = createDiv("button", possibleDates, 'Delete this date', deleteDateId);
+   deleteDate.setAttribute("id", deleteDateId);
+
+    console.log(deleteDate);
+
+   const deleteDateFunction = (dateToDelete) => {
+    let deleteDateTargetButton = document.getElementById(deleteDateId);
+    let deleteDateTarget = document.getElementById(divName);
+    deleteDateTargetButton.remove();
+    deleteDateTarget.remove();
+   };
+
+   document.getElementById(deleteDateId).addEventListener("click", deleteDateFunction);
 };
 
 document.getElementById("addDate").addEventListener("click", addNewDate);
