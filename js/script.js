@@ -97,15 +97,13 @@ const addNewDate = () => {
 document.getElementById("addDate").addEventListener("click", addNewDate);
 
 
-
-
 // crée un événement dans le back via le form
 
-import { createEvent } from './DataBackEnd.js';
-import { updateEvent } from './DataBackEnd.js';
-import { deleteEvent } from "./DataBackEnd.js"
+import { createEvent, updateEvent, deleteEvent } from './DataBackEnd.js';
+
+
 const allInputs = document.querySelectorAll('input')
-const submitButton = document.getElementById('addDate');
+const submitButton = document.getElementById('submitEvent');
 const eventTitle = document.getElementById('newEventName');
 const eventDescription = document.getElementById('newEventDescri');
 
@@ -115,7 +113,7 @@ submitButton.addEventListener("click", (e) => {
     e.preventDefault();
     if (!isInputListEmpty()) {
         let dates = [];
-        for (let inputDate of document.querySelectorAll(".input-date")) {
+        for (let inputDate of document.querySelectorAll("#newEventDate")) {
             dates.push(inputDate.value);
         }
         let newEvent = {
@@ -130,7 +128,8 @@ submitButton.addEventListener("click", (e) => {
     }
 });
 
-//function pour 256 caractères et moins de 3.
+
+//function pour 256 caractères et min 3.
 function isInputListEmpty() {
     let isEmpty = false;
     allInputs.forEach(input => {
@@ -202,11 +201,3 @@ deleteButtons.forEach(deleteButton => {
 });
 
 
-
-// création de l'event et implémentation dans html
-
-const submitEvent = document.getElementById('submitEvent')
-
-submitEvent.addEventListener('click',()=> {
-    
-})
