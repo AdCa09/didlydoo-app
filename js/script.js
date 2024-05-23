@@ -36,7 +36,7 @@ function createDiv(type,parent,content,className) {
 
 //Manage form
 
-const formContent = document.getElementsByClassName("formContent");
+const formContent = document.getElementById("formContent");
 let newEventName = document.getElementById('newEventName');
 let newEventDescri = document.getElementById('newEventDescri')
 let newEventDate = document.getElementById('newEventDate');
@@ -45,9 +45,11 @@ let clickCount = 0;
 //Add another date
 const addNewDate = () => {
     clickCount++;
-    let divName = newEventDate + clickCount;
+    let divName = newEventDate.id + clickCount;
     console.log(divName);
-    createDiv("input", formContent, '', '');
+    createDiv("input", formContent, '', divName);
+    let addedDate = document.getElementById(divName);
+    addedDate.setAttribute("type", "date");
 };
 
 document.getElementById("addDate").addEventListener("click", addNewDate);
