@@ -200,3 +200,13 @@ deleteButtons.forEach(deleteButton => {
         }
     });
 });
+
+
+
+// création de l'event et implémentation dans html
+
+const submitEvent = document.getElementById('submitEvent')
+
+submitEvent.addEventListener('click',()=> {
+    
+})
