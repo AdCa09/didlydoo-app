@@ -22,7 +22,36 @@ modeButton.addEventListener("click", () => {
   }
 })
 
-import { createEvent } from './DataBackEnd.js'; // Importez la bonne fonction pour créer un événement
+//MODAL MANAGER FOR NEW EVENT
+
+// Get the modal
+const modal = document.getElementById("formModal");
+// Get the button that opens the modal
+const addEvent = document.getElementById("addEvent");
+// Get the  element that closes the modal
+const closing = document.getElementsByClassName("close")[0];
+// When the user clicks the button, open the modal 
+addEvent.onclick = function () {
+    modal.style.display = "block";
+}
+// When the user clicks on  (x), close the modal
+closing.onclick = function () {
+    modal.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+
+
+
+// crée un événement dans le back via le form
+
+import { createEvent } from './DataBackEnd.js';
+import { updateEvent } from './DataBackEnd.js';
+import { deleteEvent } from "./DataBackEnd.js"
 const allInputs = document.querySelectorAll('input')
 const submitButton = document.getElementById('addDate');
 const eventTitle = document.getElementById('newEventName');
@@ -48,6 +77,8 @@ submitButton.addEventListener("click", (e) => {
         createEvent(newEvent);
     }
 });
+
+//function pour 256 caractères et moins de 3.
 function isInputListEmpty() {
     let isEmpty = false;
     allInputs.forEach(input => {
@@ -68,59 +99,52 @@ function isInputListEmpty() {
 }
 
 
-//MODAL MANAGER FOR NEW EVENT
+// modifie un événement dans le back 
 
-// Get the modal
-const modal = document.getElementById("formModal");
-// Get the button that opens the modal
-const addEvent = document.getElementById("addEvent");
-// Get the  element that closes the modal
-const closing = document.getElementsByClassName("close")[0];
-// When the user clicks the button, open the modal 
-addEvent.onclick = function () {
-    modal.style.display = "block";
-}
-// When the user clicks on  (x), close the modal
-closing.onclick = function () {
-    modal.style.display = "none";
-}
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+const editButton = document.getElementById('');
+
+
+editButton.addEventListener('click', (e) =>{
+    e.preventDefault();
+    let date = [];
+    if (!isInputListEmpty()) {
+        for (let inputDate of document.querySelectorAll(".input-date")) {
+            dates.push(inputDate.value);
+        }
+        let patchEvent = {
+            name: eventTitle.value,
+            author: authorEvent.value,
+            description: eventDescription.value,
+        };
+
+        //send patch event to backend (imported function)
+        updateEvent(patchEvent);
     }
-}
+});
 
-//Create Div
-function createDiv(type,parent,content,className) {
-    const newDiv=document.createElement(type);
-    if (content!=null) {
-      newDiv.innerHTML=content;
-    }
-    if (className!=null) {
-      newDiv.classList.add(className);
-    }
-    parent.appendChild(newDiv);
-    return newDiv;
-}
 
-//Manage form
+//supprime l'event dans le back 
 
-const formContent = document.getElementById("formContent");
-let newEventName = document.getElementById('newEventName');
-let newEventDescri = document.getElementById('newEventDescri')
-let newEventDate = document.getElementById('newEventDate');
-let clickCount = 0;
+const deleteButtons = document.querySelectorAll('');// a ajouter lors de la création des des events en js 
 
-//Add another date
-const addNewDate = () => {
-    clickCount++;
-    let divName = newEventDate.id + clickCount;
-    console.log(divName);
-    createDiv("input", formContent, '', divName);
-    let addedDate = document.getElementById(divName);
-    addedDate.setAttribute("type", "date");
-};
+deleteButtons.forEach(deleteButton => {
+    deleteButton.addEventListener('click', async (e) => {
+        e.preventDefault();
+        const eventId = deleteButton.getAttribute('data-event-id');
 
-document.getElementById("addDate").addEventListener("click", addNewDate);
-
+        if (eventId) {
+            try {
+                const response = await deleteEvent(eventId); 
+                if (response.success) {
+                    document.getElementById(`event${eventId}`).remove();
+                } else {
+                    console.error('Failed to delete event:', response.message);
+                }
+            } catch (error) {
+                console.error('Error deleting event:', error);
+            }
+        } else {
+            console.error('Event ID not found');
+        }
+    });
+});
