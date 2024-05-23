@@ -3,11 +3,12 @@ import { loadThemeFromLocalStorage } from "./darkmode.js";
 import { lightMode } from "./darkmode.js";
 import { darkMode } from "./darkmode.js";
 
-
-window.addEventListener('DOMContentLoaded', loadThemeFromLocalStorage);
-
 const modeButton = document.querySelector(".mode");
 const html = document.querySelector("html");
+
+window.addEventListener('DOMContentLoaded', () => {
+    loadThemeFromLocalStorage(html);
+});
 
 modeButton.addEventListener("click", () => {
   const dataTheme = html.getAttribute("data-theme");
@@ -20,7 +21,7 @@ modeButton.addEventListener("click", () => {
     lightMode();
     saveThemeToLocalstorage("light");
   }
-})
+});
 
 import { createEvent } from './DataBackEnd.js'; // Importez la bonne fonction pour créer un événement
 const allInputs = document.querySelectorAll('input')

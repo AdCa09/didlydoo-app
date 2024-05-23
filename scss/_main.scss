@@ -16,6 +16,11 @@ body.dark {
     background-image: var(--colorBodyBackgroundDark);
     color: var(--colorTextDark);
 }
+article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 #addEvent {
     font-family: Lalezar;
