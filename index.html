@@ -22,7 +22,7 @@
     <main class="events" id="events">
 
         <article>
-            <input type="button" value="New event" id="addEvent">
+            <button id="addEvent">New Event</button>
             <!-- The Modal -->
             <section id="formModal" class="formModal">
                 <!-- Modal content -->
@@ -36,13 +36,14 @@
                     <label for="eventDescri">Description of the event</label>
                     <textarea id="newEventDescri" rows="4" cols="50" placeholder="Describe the event here"></textarea>
                     <label for="eventDate">Start date:</label>
-                    <input type="date" id="newEventDate" min="2024-01-01" max="2050-12-31" />
+                    <div id="possibleDates"><input type="date" id="newEventDate" min="2024-01-01" max="2050-12-31" /></div>
                     <input type="button" value="Add another date" id="addDate">
-                    <input type="submit" value="Add your event to the list">
+                    <input type="submit" value="Add your event to the list" id="submitEvent">
                 </div>
             </section>
             <section id="eventsList">
                 <!--DOM GOES HERE-->
+                
             </section>
         </article>
 
