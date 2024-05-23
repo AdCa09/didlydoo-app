@@ -1,3 +1,27 @@
+import { saveThemeToLocalstorage } from "./darkmode.js";
+import { loadThemeFromLocalStorage } from "./darkmode.js";
+import { lightMode } from "./darkmode.js";
+import { darkMode } from "./darkmode.js";
+
+
+window.addEventListener('DOMContentLoaded', loadThemeFromLocalStorage);
+
+const modeButton = document.querySelector(".mode");
+const html = document.querySelector("html");
+
+modeButton.addEventListener("click", () => {
+  const dataTheme = html.getAttribute("data-theme");
+  if (dataTheme === "light") {
+    html.setAttribute("data-theme", "dark");
+    darkMode();
+    saveThemeToLocalstorage("dark");
+  } else {
+    html.setAttribute("data-theme", "light");
+    lightMode();
+    saveThemeToLocalstorage("light");
+  }
+})
+
 //MODAL MANAGER FOR NEW EVENT
 
 // Get the modal
@@ -67,4 +91,39 @@ function isInputListEmpty() {
     return isEmpty;
 }
 
+
+
+
+//Create Div
+function createDiv(type,parent,content,className) {
+    const newDiv=document.createElement(type);
+    if (content!=null) {
+      newDiv.innerHTML=content;
+    }
+    if (className!=null) {
+      newDiv.classList.add(className);
+    }
+    parent.appendChild(newDiv);
+    return newDiv;
+}
+
+//Manage form
+
+const formContent = document.getElementById("formContent");
+let newEventName = document.getElementById('newEventName');
+let newEventDescri = document.getElementById('newEventDescri')
+let newEventDate = document.getElementById('newEventDate');
+let clickCount = 0;
+
+//Add another date
+const addNewDate = () => {
+    clickCount++;
+    let divName = newEventDate.id + clickCount;
+    console.log(divName);
+    createDiv("input", formContent, '', divName);
+    let addedDate = document.getElementById(divName);
+    addedDate.setAttribute("type", "date");
+};
+
+document.getElementById("addDate").addEventListener("click", addNewDate);
 
