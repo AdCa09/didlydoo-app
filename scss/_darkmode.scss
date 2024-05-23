@@ -1,0 +1,22 @@
+@import "colors";
+html[data-theme="light"] {
+    --colorBodyBackgroundLight: #{ $colorBodyBackgroundLight };
+    --colorTextLight: #{ $colorTextLight };
+    --filterSvgLight: #{ $filterSvgLight };
+    --buttonBorderLight: #{ $buttonBorderLight };
+    --colorButtonBackgroundLight: #{ $colorButtonBackgroundLight };
+    --colorEventBackgroundLight: #{ $colorEventBackgroundLight };
+    --colorButtonShadowLight: #{ $colorButtonShadowLight };
+    --colorEventShadowLight: #{ $colorEventShadowLight };
+}
+
+html[data-theme="dark"] {
+    --colorBodyBackgroundDark: #{ $colorBodyBackgroundDark };
+    --colorTextDark: #{ $colorTextDark};
+    --filterSvgDark: #{ $filterSvgDark };
+    --buttonBorderDark: #{ $buttonBorderDark };
+    --colorButtonBackgroundDark: #{ $colorButtonBackgroundDark };
+    --colorEventBackgroundDark: #{ $colorEventBackgroundDark };
+    --colorButtonShadowDark: #{ $colorButtonShadowDark };
+    --colorEventShadowDark: #{ $colorEventShadowDark };
+}

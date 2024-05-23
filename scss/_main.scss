@@ -1,6 +1,50 @@
 body {
-    background: linear-gradient(180deg, #E1C8FF 0%, #9E77CE 100%); //gradient light
-    position:relative;
-    height:100vh;
-    width:100vw;
+    background-image: var(--colorBodyBackgroundLight);
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100dvh;
+    color: var(--colorTextLight);
+    margin: 0;
+}
+
+body.light {
+    background-image: var(--colorBodyBackgroundLight);
+    color: var(--colorTextLight);
+}
+
+body.dark {
+    background-image: var(--colorBodyBackgroundDark);
+    color: var(--colorTextDark);
+}
+
+#addEvent {
+    font-family: Lalezar;
+    font-size: 1rem;
+    text-transform: lowercase;
+    background-color: var(--colorButtonBackgroundLight);
+    color: var(--colorTextLight);
+    box-shadow: var(--colorButtonShadowLight);
+    border: 2px solid var(--colorTextLight);
+    // border: 3px solid;
+    // border-image-slice: 1;
+    // border-image-source: var(--buttonBorderLight);
+    border: none;
+    border-radius: 0.8rem;
+    width: 30dvw;
+    height: 6dvw;
+    text-align: center;
+}
+
+input.light {
+    background-color: var(--colorButtonBackgroundLight);
+    color: var(--colorTextLight);
+    box-shadow: var(--colorButtonShadowLight);
+    border: 2px solid var(--colorTextLight);
+}
+
+input.dark {
+    background-color: var(--colorButtonBackgroundDark) !important;
+    color: var(--colorTextDark);
+    box-shadow: var(--colorButtonShadowDark) !important;
+    border: 2px solid var(--colorTextDark);
 }

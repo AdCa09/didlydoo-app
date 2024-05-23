@@ -1,26 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
+
 <head>
-    <link type="text/css" rel="stylesheet" href="assets/css/style.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
+    <title>Didlydoo</title>
+    <link rel="icon" href="assets/images/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&display=swap" rel="stylesheet">
+    <script type="module" src="./js/script.js"></script>
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
+
 <body>
     <header>
-        <h1 class="header_title"></h1>
-        <button class="header_button">Add event</button>
-        <div id="details_event"></div>
+        <img src="assets/images/logo.svg" alt="Didlydoo logo" class="logo svg">
+        <img src="assets/images/name.svg" alt="Didlidoo full name logo" class="name svg">
+        <button class="mode"><img src="assets/images/mode-dark.svg" alt="Mode button" class="mode-button svg"></button>
     </header>
-
     <main class="events" id="events">
+
+        <article>
+            <input type="button" value="New event" id="addEvent">
+            <!-- The Modal -->
+            <section id="formModal" class="formModal">
+                <!-- Modal content -->
+                <div class="formContent" id="formContent">
+                    <span class="close">&times;</span>
+                    <h2>Create a new event</h2>
+                    <label for="eventName">Name of the event</label>
+                    <input type="text" id="newEventName" placeholder="Type the name of the event here">
+                    <label for="eventName">Creator of the event</label>
+                    <input type="text" id="newAuthorName" placeholder="Type your name here">
+                    <label for="eventDescri">Description of the event</label>
+                    <textarea id="newEventDescri" rows="4" cols="50" placeholder="Describe the event here"></textarea>
+                    <label for="eventDate">Start date:</label>
+                    <input type="date" id="newEventDate" min="2024-01-01" max="2050-12-31" />
+                    <input type="button" value="Add another date" id="addDate">
+                    <input type="submit" value="Add your event to the list">
+                </div>
+            </section>
+            <section id="eventsList">
+                <!--DOM GOES HERE-->
+            </section>
+        </article>
 
     </main>
 
     <footer>
+        <div class="contact">
+            <a href="https://github.com/AdCa09" class="githubLink" target="_blank">
+                <!-- <div class="bubbleName">Tasha</div>
+                <div class="arrowDown"> -->
+                </div><img src="assets/images/github.svg" alt="github logo" class="svg github">
+            </a>
+        </div>
+        <div class="contact">
+            <a href="https://github.com/nyxisnyx" class="githubLink" target="_blank">
+                <!-- <div class="bubbleName">Adrien</div>
+                <div class="arrowDown"> -->
+        </div><img src="assets/images/github.svg" alt="github logo" class="svg github">
+        </a>
+        </div>
+        <div class="contact">
+            <a href="https://github.com/NataliiaTasha" class="githubLink" target="_blank">
+                <!-- <div class="bubbleName">Julie</div>
+                <div class="arrowDown"></div> -->
+                <img src="assets/images/github.svg" alt="github logo" class="svg github">
+            </a>
+        </div>
 
     </footer>
-    <script src="./js/script.js"></script>
 </body>
+
 </html>
