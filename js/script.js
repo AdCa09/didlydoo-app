@@ -25,8 +25,8 @@ window.onclick = function (event) {
 import { createEvent } from './DataBackEnd.js'; // Importez la bonne fonction pour créer un événement
 const allInputs = document.querySelectorAll('input')
 const submitButton = document.getElementById('addDate');
-const eventTitle = document.getElementById('eventName');
-const eventDescription = document.getElementById('eventDescri');
+const eventTitle = document.getElementById('newEventName');
+const eventDescription = document.getElementById('newEventDescri');
 
 const authorEvent = document.getElementById('newAuthorName')
 
