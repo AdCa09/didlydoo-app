@@ -27,6 +27,7 @@ body {
   min-height: 100dvh;
   color: var(--colorTextLight);
   margin: 0;
+  font-family: Lalezar;
 }
 
 body.light {
@@ -45,6 +46,23 @@ article {
   align-items: center;
 }
 
+.sort, .filter {
+  background-color: transparent;
+  border: none;
+}
+
+.container-main {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+
+.side-meny {
+  display: flex;
+  flex-direction: row;
+  justify-items: flex-end;
+}
+
 #addEvent {
   font-family: Lalezar;
   font-size: 1rem;
@@ -60,18 +78,33 @@ article {
   text-align: center;
 }
 
-input.light {
+.add-event .light {
   background-color: var(--colorButtonBackgroundLight);
   color: var(--colorTextLight);
   box-shadow: var(--colorButtonShadowLight);
   border: 2px solid var(--colorTextLight);
 }
-
-input.dark {
+.add-event.dark {
   background-color: var(--colorButtonBackgroundDark) !important;
   color: var(--colorTextDark);
   box-shadow: var(--colorButtonShadowDark) !important;
   border: 2px solid var(--colorTextDark);
+}
+
+.formContent .light {
+  background-color: var(--colorEventBackgroundLight);
+}
+.formContent.dark {
+  background-color: var(--colorEventBackgroundDark) !important;
+}
+
+.addDate, .submit {
+  margin-top: 1dvh;
+  width: 30dvw;
+  height: 6dvw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 0.8rem;
 }
 
 footer {

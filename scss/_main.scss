@@ -5,6 +5,7 @@ body {
     min-height: 100dvh;
     color: var(--colorTextLight);
     margin: 0;
+    font-family: Lalezar;
 }
 
 body.light {
@@ -16,10 +17,26 @@ body.dark {
     background-image: var(--colorBodyBackgroundDark);
     color: var(--colorTextDark);
 }
+
 article {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+.sort, .filter {
+    background-color: transparent;
+    border: none;
+}
+.container-main {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    }
+
+.side-meny {
+    display: flex;
+    flex-direction: row;
+    justify-items: flex-end;
 }
 
 #addEvent {
@@ -30,9 +47,6 @@ article {
     color: var(--colorTextLight);
     box-shadow: var(--colorButtonShadowLight);
     border: 2px solid var(--colorTextLight);
-    // border: 3px solid;
-    // border-image-slice: 1;
-    // border-image-source: var(--buttonBorderLight);
     border: none;
     border-radius: 0.8rem;
     width: 30dvw;
@@ -40,16 +54,37 @@ article {
     text-align: center;
 }
 
-input.light {
-    background-color: var(--colorButtonBackgroundLight);
-    color: var(--colorTextLight);
-    box-shadow: var(--colorButtonShadowLight);
-    border: 2px solid var(--colorTextLight);
+.add-event {
+    .light {
+        background-color: var(--colorButtonBackgroundLight);
+        color: var(--colorTextLight);
+        box-shadow: var(--colorButtonShadowLight);
+        border: 2px solid var(--colorTextLight);
+    }
+
+    &.dark {
+        background-color: var(--colorButtonBackgroundDark) !important;
+        color: var(--colorTextDark);
+        box-shadow: var(--colorButtonShadowDark) !important;
+        border: 2px solid var(--colorTextDark);
+    }
 }
 
-input.dark {
-    background-color: var(--colorButtonBackgroundDark) !important;
-    color: var(--colorTextDark);
-    box-shadow: var(--colorButtonShadowDark) !important;
-    border: 2px solid var(--colorTextDark);
+.formContent {
+    .light {
+        background-color: var(--colorEventBackgroundLight);
+    }
+    &.dark {
+        background-color: var(--colorEventBackgroundDark) !important;
+    }
+}
+
+.addDate, .submit {
+   margin-top: 1dvh;
+   width: 30dvw;
+   height: 6dvw;
+   margin-left: auto;
+   margin-right: auto;
+   border-radius: 0.8rem;  
+  
 }

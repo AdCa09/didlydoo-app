@@ -22,7 +22,19 @@
     <main class="events" id="events">
 
         <article>
-            <input type="button" value="New event" id="addEvent">
+            <div class="container-main">
+                <!-- <input type="button" value="New event" id="addEvent"> -->
+                <button id="addEvent" class="add-event">New event</button>
+                <div class="side-menu">
+                    <button class="sort">
+                        <img src="assets/images/sort.svg" alt="sort icon" class="svg">
+                    </button>
+                    <button class="filter">
+                        <img src="assets/images/filter.svg" alt="filter icon" class="svg ">
+                    </button>
+                </div>
+            </div>
+
             <!-- The Modal -->
             <section id="formModal" class="formModal">
                 <!-- Modal content -->
@@ -37,8 +49,8 @@
                     <textarea id="newEventDescri" rows="4" cols="50" placeholder="Describe the event here"></textarea>
                     <label for="eventDate">Start date:</label>
                     <input type="date" id="newEventDate" min="2024-01-01" max="2050-12-31" />
-                    <input type="button" value="Add another date" id="addDate">
-                    <input type="submit" value="Add your event to the list">
+                    <input type="button" value="Add another date" id="addDate" class="addDate">
+                    <input type="submit" value="Add your event to the list" class="submit">
                 </div>
             </section>
             <section id="eventsList">
@@ -53,8 +65,8 @@
             <a href="https://github.com/AdCa09" class="githubLink" target="_blank">
                 <!-- <div class="bubbleName">Tasha</div>
                 <div class="arrowDown"> -->
-                </div><img src="assets/images/github.svg" alt="github logo" class="svg github">
-            </a>
+        </div><img src="assets/images/github.svg" alt="github logo" class="svg github">
+        </a>
         </div>
         <div class="contact">
             <a href="https://github.com/nyxisnyx" class="githubLink" target="_blank">

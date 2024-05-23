@@ -1,8 +1,6 @@
-import { saveThemeToLocalstorage } from "./darkmode.js";
-import { loadThemeFromLocalStorage } from "./darkmode.js";
-import { lightMode } from "./darkmode.js";
-import { darkMode } from "./darkmode.js";
-import { renderEvent } from "./renderEvent.js";
+import { saveThemeToLocalstorage, loadThemeFromLocalStorage, darkMode, lightMode } from "./darkmode.js";
+
+// import { renderEvent } from "./renderEvent.js";
 
 const modeButton = document.querySelector(".mode");
 const html = document.querySelector("html");
