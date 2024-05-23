@@ -22,30 +22,6 @@ modeButton.addEventListener("click", () => {
   }
 })
 
-//MODAL MANAGER FOR NEW EVENT
-
-// Get the modal
-const modal = document.getElementById("formModal");
-// Get the button that opens the modal
-const addEvent = document.getElementById("addEvent");
-// Get the  element that closes the modal
-const closing = document.getElementsByClassName("close")[0];
-// When the user clicks the button, open the modal 
-addEvent.onclick = function () {
-    modal.style.display = "block";
-}
-// When the user clicks on  (x), close the modal
-closing.onclick = function () {
-    modal.style.display = "none";
-}
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-}
-
-
 import { createEvent } from './DataBackEnd.js'; // Importez la bonne fonction pour créer un événement
 const allInputs = document.querySelectorAll('input')
 const submitButton = document.getElementById('addDate');
@@ -92,7 +68,28 @@ function isInputListEmpty() {
 }
 
 
+//MODAL MANAGER FOR NEW EVENT
 
+// Get the modal
+const modal = document.getElementById("formModal");
+// Get the button that opens the modal
+const addEvent = document.getElementById("addEvent");
+// Get the  element that closes the modal
+const closing = document.getElementsByClassName("close")[0];
+// When the user clicks the button, open the modal 
+addEvent.onclick = function () {
+    modal.style.display = "block";
+}
+// When the user clicks on  (x), close the modal
+closing.onclick = function () {
+    modal.style.display = "none";
+}
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
 
 //Create Div
 function createDiv(type,parent,content,className) {
