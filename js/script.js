@@ -1,14 +1,9 @@
 
 import { saveThemeToLocalstorage, loadThemeFromLocalStorage, darkMode, lightMode } from "./darkmode.js";
 
-// import { renderEvent } from "./renderEvent.js";
 
-import { saveThemeToLocalstorage } from "./darkmode.js";
-import { loadThemeFromLocalStorage } from "./darkmode.js";
-import { lightMode } from "./darkmode.js";
-import { darkMode } from "./darkmode.js";
 import { addNewEvent } from "./modal.js";
-import { renderEvent } from "./renderEvent.js";
+// import { renderEvent } from "./renderEvent.js";
 addNewEvent();
 
 
@@ -46,6 +41,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             const div = document.createElement('div');
             div.textContent = `${event.name} ${event.dates.join(', ')}, ${event.author}, ${event.description}`;
             eventsList.appendChild(div);
+            div.style.backgroundColor = 'white';
+            div.style.borderRadius = '18px';
+            div.style.paddingTop = '18px';
+            div.style.width = '50%';
+            div.style.margin = '0 auto';
+            div.style.textAlign = 'center';
+
         });
     } catch (error) {
         console.error("Une erreur s'est produite lors de la récupération des événements", error);
