@@ -37,7 +37,7 @@ export function renderEvent(event) {
 
     const deleteButton = document.createElement("button");
     deleteButton.innerHTML = '<img src ="assets/images/delete.svg"';
-    
+
     deleteButton.addEventListener("click", () => {
         eventList.removeChild(eventContainer);
         deleteEvent(event.id);

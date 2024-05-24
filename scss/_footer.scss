@@ -15,33 +15,19 @@ footer {
 
 .github {
     padding: 1dvw;
+    cursor: pointer;
+    transition: 0.5s;
+    &:hover {
+        transform: scale(130%) rotate(45deg);
+    }
+
 }
 
-// .bubbleName, .arrowDown {
-//     display: none;
-// }
-
-// .bubbleName {
-//     height: 20dvh;
-//     width: 25dvw;
-//     background: ivory;
-//     display: block;
-//     // margin: 0 auto;
-//     border-radius: 20px;
-//     // margin-top: 50px;
-//     text-align: center;
-//     font-family: Lalezard;
-//     font-size: 2rem;
-// }
-
-// .arrowDown {
-//     height: 7dvw;
-//     width: 7dvw;s
-//     background: ivory;
-//     margin: 0 auto;
-//     transform: rotate(45deg);
-//     border-radius: 0 0 12px 0;
-//     margin-top: -22px;
-//     position: relative;
-//     left: calc(0.5vw - 5dvw);
-// }
+.github-name {
+    display: none;
+    
+  }
+  
+  .github:hover + .github-name {
+    display: block;
+  }
