@@ -2,8 +2,12 @@ import { saveThemeToLocalstorage } from "./darkmode.js";
 import { loadThemeFromLocalStorage } from "./darkmode.js";
 import { lightMode } from "./darkmode.js";
 import { darkMode } from "./darkmode.js";
+<<<<<<< HEAD
 import { addNewEvent } from "./modal.js";
 addNewEvent();
+=======
+import { renderEvent } from "./renderEvent.js";
+>>>>>>> dev
 
 const modeButton = document.querySelector(".mode");
 const html = document.querySelector("html");
@@ -29,6 +33,7 @@ modeButton.addEventListener("click", () => {
 // crée un événement dans le back via le form
 import { createEvent, fetchData } from './DataBackEnd.js';
 
+<<<<<<< HEAD
 document.addEventListener('DOMContentLoaded', async () => {
     // Afficher les événements existants
     try {
@@ -42,6 +47,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     } catch (error) {
         console.error("Une erreur s'est produite lors de la récupération des événements", error);
     }
+=======
+import { createEvent } from './DataBackEnd.js';
+import { updateEvent } from './DataBackEnd.js';
+import { deleteEvent } from "./DataBackEnd.js"
+
+const allInputs = document.querySelectorAll('input')
+const submitButton = document.getElementById('addDate');
+const eventTitle = document.getElementById('newEventName');
+const eventDescription = document.getElementById('newEventDescri');
+>>>>>>> dev
 
     const submitButton = document.getElementById('submitEvent');
     const eventTitle = document.getElementById('newEventName');
