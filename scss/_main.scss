@@ -9,16 +9,6 @@ body {
     letter-spacing: 0.07rem;
 }
 
-// body.light {
-//     background-image: var(--colorBodyBackground);
-//     color: var(--colorText);
-// }
-
-// body.dark {
-//     background-image: var(--colorBodyBackground);
-//     color: var(--colorTextDark);
-// }
-
 article {
     display: flex;
     flex-direction: column;
@@ -51,7 +41,6 @@ h2 {
     }
 }
 
-
 .sort,
 .filter {
     background-color: transparent;
@@ -62,24 +51,27 @@ h2 {
     display: flex;
     flex-direction: row;
     align-items: center;
+    align-content: center;
     justify-content: space-between;
     width: 100dvw;
+    margin-bottom: 2.5dvw;
 }
 
 .events {
     display: flex;
     justify-content: center;
+    padding: 2.5dvw;
 }
 
 .side-menu {
     display: flex;
     flex-direction: row;
     padding-right: 2.5dvw;
+ 
 }
 
 .empty {
-    padding-right: 2.5dvw;
-    width: 55px;
+    width: 10dvw;
 }
 
 #addEvent {
@@ -88,13 +80,16 @@ h2 {
     text-transform: lowercase;
     background-color: var(--colorButtonBackground);
     color: var(--colorText);
-    box-shadow: var(--colorButtonShadow);
-    border: 2px solid var(--colorText);
+    box-shadow: var(--colorButtonShadow);    
     border: none;
     border-radius: 0.8rem;
-    width: 30dvw;
-    height: 6dvw;
+    width: 25dvw;
+    height: 5dvw;
     text-align: center;
+    cursor: pointer;
+    &:hover {
+        border: 2px solid var(--colorText);
+    }
 
 }
 
@@ -129,8 +124,8 @@ h2 {
 .addDate,
 .submit {
     margin-top: 1dvh;
-    width: 30dvw;
-    height: 6dvw;
+    width: 25dvw;
+    height: 5dvw;
     margin-left: auto;
     margin-right: auto;
     border-radius: 0.8rem;

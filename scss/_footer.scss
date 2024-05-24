@@ -19,7 +19,7 @@ footer {
     transition: 0.5s;
 
     &:hover {
-        transform: scale(130%) rotate(45deg);
+        transform: scale(130%); //rotate(45deg);
     }
 
 }
@@ -28,6 +28,9 @@ footer {
     display: none;
     text-decoration: none;
     color: var(--colorText);
+    background-color: var(--colorEventBackground);
+    padding: 1dvw;
+    border-radius: 1dvw;
 
 }
 a {

@@ -3,13 +3,12 @@ header {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    height: 10dvh;
-    margin-top: 2.5dvw;
+    // height: 10dvh;
+    padding: 2.5dvw;
 }
 
 .mode-button {
-    padding: 2dvh;
-    filter: var(--filterSvg);
+    //filter: var(--filterSvg);
     cursor: pointer;
     transition: 0.5s;
 
@@ -19,17 +18,23 @@ header {
     }
 }
 
-
-
-.logo,
-.name,
-.mode-button {
-    padding: 2.5dvw;
-}
+// .logo,
+// .name,
+// .mode-button {
+//     padding: 2.5dvw;
+// }
 
 .mode {
     background-color: transparent;
     border: none;
+}
+
+.name {
+    width: 25dvw;
+}
+
+.logo {
+    width: 7.5dvw;
 }
 
 .svgLightMode {
@@ -38,4 +43,10 @@ header {
 
 .svgDarkMode {
     filter: var(--filterSvg);
+}
+
+@media (min-width: 768px) {   
+    .mode-button, .sort-button, .filter-button, .github {
+        height: 25px;
+    }
 }

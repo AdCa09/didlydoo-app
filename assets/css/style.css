@@ -77,13 +77,16 @@ h2 {
   display: flex;
   flex-direction: row;
   align-items: center;
+  align-content: center;
   justify-content: space-between;
   width: 100dvw;
+  margin-bottom: 2.5dvw;
 }
 
 .events {
   display: flex;
   justify-content: center;
+  padding: 2.5dvw;
 }
 
 .side-menu {
@@ -93,8 +96,7 @@ h2 {
 }
 
 .empty {
-  padding-right: 2.5dvw;
-  width: 55px;
+  width: 10dvw;
 }
 
 #addEvent {
@@ -104,12 +106,15 @@ h2 {
   background-color: var(--colorButtonBackground);
   color: var(--colorText);
   box-shadow: var(--colorButtonShadow);
-  border: 2px solid var(--colorText);
   border: none;
   border-radius: 0.8rem;
-  width: 30dvw;
-  height: 6dvw;
+  width: 25dvw;
+  height: 5dvw;
   text-align: center;
+  cursor: pointer;
+}
+#addEvent:hover {
+  border: 2px solid var(--colorText);
 }
 
 .add-event .light {
@@ -137,8 +142,8 @@ h2 {
 .addDate,
 .submit {
   margin-top: 1dvh;
-  width: 30dvw;
-  height: 6dvw;
+  width: 25dvw;
+  height: 5dvw;
   margin-left: auto;
   margin-right: auto;
   border-radius: 0.8rem;
@@ -165,13 +170,16 @@ footer {
   transition: 0.5s;
 }
 .github:hover {
-  transform: scale(130%) rotate(45deg);
+  transform: scale(130%);
 }
 
 .github-name {
   display: none;
   text-decoration: none;
   color: var(--colorText);
+  background-color: var(--colorEventBackground);
+  padding: 1dvw;
+  border-radius: 1dvw;
 }
 
 a {
@@ -187,13 +195,10 @@ header {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 10dvh;
-  margin-top: 2.5dvw;
+  padding: 2.5dvw;
 }
 
 .mode-button {
-  padding: 2dvh;
-  filter: var(--filterSvg);
   cursor: pointer;
   transition: 0.5s;
 }
@@ -201,15 +206,17 @@ header {
   transform: scale(130%) rotate(-45deg);
 }
 
-.logo,
-.name,
-.mode-button {
-  padding: 2.5dvw;
-}
-
 .mode {
   background-color: transparent;
   border: none;
+}
+
+.name {
+  width: 25dvw;
+}
+
+.logo {
+  width: 7.5dvw;
 }
 
 .svgLightMode {
@@ -220,6 +227,11 @@ header {
   filter: var(--filterSvg);
 }
 
+@media (min-width: 768px) {
+  .mode-button, .sort-button, .filter-button, .github {
+    height: 25px;
+  }
+}
 #formModal {
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
@@ -256,7 +268,7 @@ header {
   transition: 0.5s;
 }
 #formModal .formContent .close:hover {
-  transform: scale(130%) rotate(-45deg);
+  transform: scale(130%);
   cursor: pointer;
 }
 #formModal .formContent h2 {
