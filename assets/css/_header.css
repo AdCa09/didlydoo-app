@@ -1,0 +1,36 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 10dvh;
+}
+
+.mode-button {
+  padding: 2dvh;
+  filter: var(--filterSvgLight);
+  cursor: pointer;
+  transition: 0.5s;
+}
+.mode-button:hover {
+  transform: scale(130%) rotate(-45deg);
+}
+
+.logo,
+.name,
+.mode-button {
+  padding: 2.5dvw;
+}
+
+.mode {
+  background-color: transparent;
+  border: none;
+}
+
+.svgLightMode {
+  filter: var(--filterSvgLight);
+}
+
+.svgDarkMode {
+  filter: var(--filterSvgDark);
+}
