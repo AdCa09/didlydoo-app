@@ -1,55 +1,138 @@
 body {
-    background-image: var(--colorBodyBackgroundLight);
+    background-image: var(--colorBodyBackground);
     background-size: cover;
     background-repeat: no-repeat;
     min-height: 100dvh;
-    color: var(--colorTextLight);
+    color: var(--colorText);
     margin: 0;
+    font-family: Lalezar;
+    letter-spacing: 0.07rem;
 }
 
-body.light {
-    background-image: var(--colorBodyBackgroundLight);
-    color: var(--colorTextLight);
-}
+// body.light {
+//     background-image: var(--colorBodyBackground);
+//     color: var(--colorText);
+// }
 
-body.dark {
-    background-image: var(--colorBodyBackgroundDark);
-    color: var(--colorTextDark);
-}
+// body.dark {
+//     background-image: var(--colorBodyBackground);
+//     color: var(--colorTextDark);
+// }
+
 article {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+input {
+    background-color: var(--colorBodyBackground);
+    color: var(--colorText);
+
+    &::placeholder {
+        color: var(--colorText);
+    }
+}
+
+label,
+h2 {
+    background-color: var(--colorEventBackground);
+    color: var(--colorText);
+    font-family: Lalezar;
+    text-transform: none;
+}
+
+#newEventDescri {
+    background-color: var(--colorBodyBackground);
+    color: var(--colorText);
+
+    &::placeholder {
+        color: var(--colorText);
+    }
+}
+
+
+.sort,
+.filter {
+    background-color: transparent;
+    border: none;
+}
+
+.container-main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100dvw;
+}
+
+.events {
+    display: flex;
+    justify-content: center;
+}
+
+.side-menu {
+    display: flex;
+    flex-direction: row;
+    padding-right: 2.5dvw;
+}
+
+.empty {
+    padding-right: 2.5dvw;
+    width: 55px;
+}
+
 #addEvent {
     font-family: Lalezar;
-    font-size: 1rem;
+    font-size: 3dvw;
     text-transform: lowercase;
-    background-color: var(--colorButtonBackgroundLight);
-    color: var(--colorTextLight);
-    box-shadow: var(--colorButtonShadowLight);
-    border: 2px solid var(--colorTextLight);
-    // border: 3px solid;
-    // border-image-slice: 1;
-    // border-image-source: var(--buttonBorderLight);
+    background-color: var(--colorButtonBackground);
+    color: var(--colorText);
+    box-shadow: var(--colorButtonShadow);
+    border: 2px solid var(--colorText);
     border: none;
     border-radius: 0.8rem;
     width: 30dvw;
     height: 6dvw;
     text-align: center;
+
 }
 
-input.light {
-    background-color: var(--colorButtonBackgroundLight);
-    color: var(--colorTextLight);
-    box-shadow: var(--colorButtonShadowLight);
-    border: 2px solid var(--colorTextLight);
+.add-event {
+    .light {
+        background-color: var(--colorButtonBackground);
+        color: var(--colorTextLight);
+        box-shadow: var(--colorButtonShadow);
+        border: 2px solid var(--colorText);
+    }
+
+    &.dark {
+        background-color: var(--colorButtonBackground) !important;
+        color: var(--colorText);
+        box-shadow: var(--colorButtonShadow) !important;
+        border: 2px solid var(--colorText);
+    }
 }
 
-input.dark {
-    background-color: var(--colorButtonBackgroundDark) !important;
-    color: var(--colorTextDark);
-    box-shadow: var(--colorButtonShadowDark) !important;
-    border: 2px solid var(--colorTextDark);
+.formContent {
+    .light {
+        background-color: var(--colorEventBackground);
+        color: var(--colorText);
+    }
+
+    &.dark {
+        background-color: var(--colorEventBackground) !important;
+        color: var(--colorText) !important;
+    }
+}
+
+.addDate,
+.submit {
+    margin-top: 1dvh;
+    width: 30dvw;
+    height: 6dvw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 0.8rem;
+
 }

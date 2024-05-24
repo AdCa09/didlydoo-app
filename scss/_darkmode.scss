@@ -1,22 +1,22 @@
 @import "colors";
 html[data-theme="light"] {
-    --colorBodyBackgroundLight: #{ $colorBodyBackgroundLight };
-    --colorTextLight: #{ $colorTextLight };
-    --filterSvgLight: #{ $filterSvgLight };
-    --buttonBorderLight: #{ $buttonBorderLight };
-    --colorButtonBackgroundLight: #{ $colorButtonBackgroundLight };
-    --colorEventBackgroundLight: #{ $colorEventBackgroundLight };
-    --colorButtonShadowLight: #{ $colorButtonShadowLight };
-    --colorEventShadowLight: #{ $colorEventShadowLight };
+    --colorBodyBackground: #{ $colorBodyBackgroundLight };
+    --colorText: #{ $colorTextLight };
+    --filterSvg: #{ $filterSvgLight };
+    --buttonBorder: #{ $buttonBorderLight };
+    --colorButtonBackground: #{ $colorButtonBackgroundLight };
+    --colorEventBackground: #{ $colorEventBackgroundLight };
+    --colorButtonShadow: #{ $colorButtonShadowLight };
+    --colorEventShadow: #{ $colorEventShadowLight };
 }
 
 html[data-theme="dark"] {
-    --colorBodyBackgroundDark: #{ $colorBodyBackgroundDark };
-    --colorTextDark: #{ $colorTextDark};
-    --filterSvgDark: #{ $filterSvgDark };
-    --buttonBorderDark: #{ $buttonBorderDark };
-    --colorButtonBackgroundDark: #{ $colorButtonBackgroundDark };
-    --colorEventBackgroundDark: #{ $colorEventBackgroundDark };
-    --colorButtonShadowDark: #{ $colorButtonShadowDark };
-    --colorEventShadowDark: #{ $colorEventShadowDark };
+    --colorBodyBackground: #{ $colorBodyBackgroundDark };
+    --colorText: #{ $colorTextDark};
+    --filterSvg: #{ $filterSvgDark };
+    --buttonBorder: #{ $buttonBorderDark };
+    --colorButtonBackground: #{ $colorButtonBackgroundDark };
+    --colorEventBackground: #{ $colorEventBackgroundDark };
+    --colorButtonShadow: #{ $colorButtonShadowDark };
+    --colorEventShadow: #{ $colorEventShadowDark };
 }
