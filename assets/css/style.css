@@ -56,6 +56,10 @@ h2 {
   text-transform: none;
 }
 
+textarea {
+  border: 1px solid var(--colorText);
+}
+
 #newEventDescri {
   background-color: var(--colorBodyBackground);
   color: var(--colorText);
@@ -199,6 +203,7 @@ header {
 }
 
 .mode-button {
+  filter: var(--filterSvg);
   cursor: pointer;
   transition: 0.5s;
 }
@@ -228,8 +233,18 @@ header {
 }
 
 @media (min-width: 768px) {
-  .mode-button, .sort-button, .filter-button, .github {
+  .mode-button,
+  .sort-button,
+  .filter-button,
+  .github {
     height: 25px;
+  }
+  .addDate,
+  .submit {
+    border-radius: 1.8rem;
+  }
+  #addEvent {
+    border-radius: 1.8rem;
   }
 }
 #formModal {

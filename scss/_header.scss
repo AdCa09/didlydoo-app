@@ -8,7 +8,7 @@ header {
 }
 
 .mode-button {
-    //filter: var(--filterSvg);
+    filter: var(--filterSvg);
     cursor: pointer;
     transition: 0.5s;
 
@@ -17,12 +17,6 @@ header {
         transform: scale(130%) rotate(-45deg);
     }
 }
-
-// .logo,
-// .name,
-// .mode-button {
-//     padding: 2.5dvw;
-// }
 
 .mode {
     background-color: transparent;
@@ -45,8 +39,22 @@ header {
     filter: var(--filterSvg);
 }
 
-@media (min-width: 768px) {   
-    .mode-button, .sort-button, .filter-button, .github {
+@media (min-width: 768px) {
+
+    .mode-button,
+    .sort-button,
+    .filter-button,
+    .github {
         height: 25px;
     }
+
+    .addDate,
+    .submit {
+        border-radius: 1.8rem;
+    }
+
+    #addEvent {
+        border-radius: 1.8rem;
+    }
+
 }

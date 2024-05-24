@@ -32,6 +32,10 @@ h2 {
     text-transform: none;
 }
 
+textarea {
+    border: 1px solid var(--colorText);
+}
+
 #newEventDescri {
     background-color: var(--colorBodyBackground);
     color: var(--colorText);
