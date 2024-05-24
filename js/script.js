@@ -45,6 +45,57 @@ window.onclick = function (event) {
     }
 }
 
+//Create Div
+function createDiv(type,parent,content,className) {
+    const newDiv=document.createElement(type);
+    if (content!=null) {
+      newDiv.innerHTML=content;
+    }
+    if (className!=null) {
+      newDiv.classList.add(className);
+    }
+    parent.appendChild(newDiv);
+    return newDiv;
+}
+
+//Manage form
+
+const formContent = document.getElementById("formContent");
+const possibleDates = document.getElementById('possibleDates');
+let newEventName = document.getElementById('newEventName');
+let newEventDescri = document.getElementById('newEventDescri')
+let newEventDate = document.getElementById('newEventDate');
+let clickCount = 0;
+
+//Add another date
+const addNewDate = () => {
+    clickCount++;
+    let divName = newEventDate.id + clickCount;
+    console.log(divName);
+   const newDateInput = createDiv("input", possibleDates, '', divName);
+   newDateInput.setAttribute("id", divName);
+   newDateInput.setAttribute("type", "date");
+   newDateInput.style.display = 'block';
+
+   let deleteDateId = divName + 'del';
+   const deleteDate = createDiv("button", possibleDates, 'Delete this date', deleteDateId);
+   deleteDate.setAttribute("id", deleteDateId);
+
+    console.log(deleteDate);
+
+   const deleteDateFunction = (dateToDelete) => {
+    let deleteDateTargetButton = document.getElementById(deleteDateId);
+    let deleteDateTarget = document.getElementById(divName);
+    deleteDateTargetButton.remove();
+    deleteDateTarget.remove();
+   };
+
+   document.getElementById(deleteDateId).addEventListener("click", deleteDateFunction);
+};
+
+document.getElementById("addDate").addEventListener("click", addNewDate);
+
+
 
 
 // crée un événement dans le back via le form
@@ -149,3 +200,13 @@ deleteButtons.forEach(deleteButton => {
         }
     });
 });
+
+
+
+// création de l'event et implémentation dans html
+
+const submitEvent = document.getElementById('submitEvent')
+
+submitEvent.addEventListener('click',()=> {
+    
+})
