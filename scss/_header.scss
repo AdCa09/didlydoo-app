@@ -4,11 +4,12 @@ header {
     justify-content: space-between;
     align-items: center;
     height: 10dvh;
+    margin-top: 2.5dvw;
     }
 
 .mode-button {
     padding: 2dvh;
-    filter: var(--filterSvgLight);
+    filter: var(--filterSvg);
     cursor: pointer;
     transition: 0.5s;
 
@@ -32,9 +33,9 @@ header {
 }
 
 .svgLightMode {
-    filter: var(--filterSvgLight);
+    filter: var(--filterSvg);
 }
 
 .svgDarkMode {
-    filter: var(--filterSvgDark);
+    filter: var(--filterSvg);
 }
