@@ -27,7 +27,8 @@ modeButton.addEventListener("click", () => {
 document.addEventListener('DOMContentLoaded', async () => {
     function createDeleteButton(eventId) {
         const deleteButton = document.createElement('button');
-        deleteButton.innerHTML = '<img src="assets/images/delete.svg" alt="Delete">';
+        deleteButton.innerHTML = '<img src="assets/images/delete.svg" alt="Delete" class="svg">';
+
         deleteButton.style.backgroundColor = "transparent";
         deleteButton.style.border = "none";
         deleteButton.style.cursor = "pointer";
@@ -55,12 +56,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     function createEventCard(event) {
         const card = document.createElement('div');
         card.id = `event${event.id}`;
-        card.style.backgroundColor = '#7E57C2';
-        card.style.color = '#FFFFFF';
-        card.style.borderRadius = '12px';
+        card.style.backgroundColor = 'var(--colorEventBackground)';
+        card.style.color = 'var(--colorText)';
+        card.style.borderRadius = '10px';
         card.style.padding = '20px';
         card.style.width = '300px';
-        card.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+        card.style.boxShadow = 'var(--colorEventShadow)';
         card.style.position = 'relative';
 
         const title = document.createElement('h3');
@@ -82,11 +83,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         // Ajout de la cellule "Dates" dans le header du tableau
         const emptyHeader = document.createElement('th');
         emptyHeader.textContent = '';
-        emptyHeader.style.border = '1px solid #FFFFFF';
+        emptyHeader.style.border = '1px solid var(--colorText)';
         emptyHeader.style.padding = '8px';
-        emptyHeader.style.backgroundColor = '#5E35B1';
+        emptyHeader.style.backgroundColor = 'var(--colorEventBackground)';
         emptyHeader.style.textAlign = 'left';
-        emptyHeader.style.backgroundColor = '#5E35B1';
+        emptyHeader.style.backgroundColor = 'var(--colorEventBackground)';
         headerRow.appendChild(emptyHeader);
 
         // Ajout des en-têtes de date dans le header du tableau
@@ -94,9 +95,9 @@ document.addEventListener('DOMContentLoaded', async () => {
             const formattedDate = formatDate(dateObj.date); // Formatage de la date
             const th = document.createElement('th');
             th.textContent = formattedDate;
-            th.style.border = '1px solid #FFFFFF';
+            th.style.border = '1px solid var(--colorText)';
             th.style.padding = '8px';
-            th.style.backgroundColor = '#5E35B1';
+            th.style.backgroundColor = 'var(--colorEventBackground)';
             th.style.textAlign = 'left';
             headerRow.appendChild(th);
         });
@@ -105,26 +106,32 @@ document.addEventListener('DOMContentLoaded', async () => {
         table.appendChild(thead);
 
         // Corps du tableau
+        // Corps du tableau
         const tbody = document.createElement('tbody');
         const authors = event.author.split(', ');
         authors.forEach(author => {
             const row = document.createElement('tr');
 
+            // Création de la cellule pour le nom de l'auteur
             const authorCell = document.createElement('td');
             authorCell.textContent = author;
-            authorCell.style.border = '1px solid #FFFFFF';
+            authorCell.style.border = '1px solid var(--colorText)';
             authorCell.style.padding = '8px';
             row.appendChild(authorCell);
 
-            // Ajout d'une cellule vide pour chaque ligne dans le corps du tableau
-            const emptyCell = document.createElement('td');
-            emptyCell.textContent = ''; // Cellule vide
-            emptyCell.style.border = '1px solid #FFFFFF';
-            emptyCell.style.padding = '8px';
-            row.appendChild(emptyCell);
+            // Ajout de cellules <td> vides pour correspondre à chaque date
+            for (let i = 0; i < event.dates.length; i++) {
+                const emptyCell = document.createElement('td');
+                emptyCell.textContent = ''; // Cellule vide
+                emptyCell.style.border = '1px solid var(--colorText)';
+                emptyCell.style.padding = '8px';
+                row.appendChild(emptyCell);
+            }
 
             tbody.appendChild(row);
         });
+
+        table.appendChild(tbody);
 
         table.appendChild(tbody);
         card.appendChild(title);
