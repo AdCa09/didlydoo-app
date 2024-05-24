@@ -1,15 +1,28 @@
 [
   {
-    "id": "61e0a77d2eab",
-    "name": "sdfv",
-    "author": "scsdc",
-    "description": "csdsdc",
+    "id": "8cfff791fd26",
+    "name": "Evenement",
+    "author": "Adri",
+    "description": "sdjfds",
     "dates": [
       "2024-05-30"
     ],
-    "created_at": "2024-05-24T13:41:27.901Z",
+    "created_at": "2024-05-24T13:55:30.938Z",
     "num_modification": 0,
-    "last_modification": "2024-05-24T13:41:27.901Z",
+    "last_modification": "2024-05-24T13:55:30.938Z",
+    "attendees": []
+  },
+  {
+    "id": "486456d62d1c",
+    "name": "Evenement",
+    "author": "adri",
+    "description": "zckdscs",
+    "dates": [
+      "2024-05-30"
+    ],
+    "created_at": "2024-05-24T13:52:59.500Z",
+    "num_modification": 0,
+    "last_modification": "2024-05-24T13:52:59.500Z",
     "attendees": []
   }
 ]

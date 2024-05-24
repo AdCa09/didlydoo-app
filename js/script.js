@@ -80,13 +80,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         const headerRow = document.createElement('tr');
 
         // Ajout de la cellule "Dates" dans le header du tableau
-        const datesHeader = document.createElement('th');
-        datesHeader.textContent = 'Dates';
-        datesHeader.style.border = '1px solid #FFFFFF';
-        datesHeader.style.padding = '8px';
-        datesHeader.style.backgroundColor = '#5E35B1';
-        datesHeader.style.textAlign = 'left';
-        headerRow.appendChild(datesHeader);
+        const emptyHeader = document.createElement('th');
+        emptyHeader.textContent = '';
+        emptyHeader.style.border = '1px solid #FFFFFF';
+        emptyHeader.style.padding = '8px';
+        emptyHeader.style.backgroundColor = '#5E35B1';
+        emptyHeader.style.textAlign = 'left';
+        emptyHeader.style.backgroundColor = '#5E35B1';
+        headerRow.appendChild(emptyHeader);
 
         // Ajout des en-têtes de date dans le header du tableau
         event.dates.forEach(dateObj => {
