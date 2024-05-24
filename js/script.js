@@ -27,9 +27,10 @@ modeButton.addEventListener("click", () => {
 document.addEventListener('DOMContentLoaded', async () => {
     function createDeleteButton(eventId) {
         const deleteButton = document.createElement('button');
-        deleteButton.textContent = 'Delete';
-        deleteButton.style.backgroundColor = "red";
-        deleteButton.style.height = "20px";
+        deleteButton.innerHTML = '<img src="assets/images/delete.svg" alt="Delete">';
+        deleteButton.style.backgroundColor = "transparent";
+        deleteButton.style.border = "none";
+        deleteButton.style.cursor = "pointer";
         deleteButton.setAttribute('data-event-id', eventId);
 
         deleteButton.addEventListener('click', async (e) => {
@@ -49,23 +50,96 @@ document.addEventListener('DOMContentLoaded', async () => {
         return deleteButton;
     }
 
+
+
+    function createEventCard(event) {
+        const card = document.createElement('div');
+        card.id = `event${event.id}`;
+        card.style.backgroundColor = '#7E57C2';
+        card.style.color = '#FFFFFF';
+        card.style.borderRadius = '12px';
+        card.style.padding = '20px';
+        card.style.width = '300px';
+        card.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+        card.style.position = 'relative';
+
+        const title = document.createElement('h3');
+        title.textContent = event.name;
+        title.style.margin = '0 0 10px 0';
+
+        const deleteButton = createDeleteButton(event.id);
+        deleteButton.style.position = 'absolute';
+        deleteButton.style.top = '10px';
+        deleteButton.style.right = '10px';
+
+        const table = document.createElement('table');
+        table.style.width = '100%';
+        table.style.borderCollapse = 'collapse';
+
+        const thead = document.createElement('thead');
+        const headerRow = document.createElement('tr');
+
+        // Ajout de la cellule "Dates" dans le header du tableau
+        const datesHeader = document.createElement('th');
+        datesHeader.textContent = 'Dates';
+        datesHeader.style.border = '1px solid #FFFFFF';
+        datesHeader.style.padding = '8px';
+        datesHeader.style.backgroundColor = '#5E35B1';
+        datesHeader.style.textAlign = 'left';
+        headerRow.appendChild(datesHeader);
+
+        // Ajout des en-têtes de date dans le header du tableau
+        event.dates.forEach(dateObj => {
+            const formattedDate = formatDate(dateObj.date); // Formatage de la date
+            const th = document.createElement('th');
+            th.textContent = formattedDate;
+            th.style.border = '1px solid #FFFFFF';
+            th.style.padding = '8px';
+            th.style.backgroundColor = '#5E35B1';
+            th.style.textAlign = 'left';
+            headerRow.appendChild(th);
+        });
+
+        thead.appendChild(headerRow);
+        table.appendChild(thead);
+
+        // Corps du tableau
+        const tbody = document.createElement('tbody');
+        const authors = event.author.split(', ');
+        authors.forEach(author => {
+            const row = document.createElement('tr');
+
+            const authorCell = document.createElement('td');
+            authorCell.textContent = author;
+            authorCell.style.border = '1px solid #FFFFFF';
+            authorCell.style.padding = '8px';
+            row.appendChild(authorCell);
+
+            // Ajout d'une cellule vide pour chaque ligne dans le corps du tableau
+            const emptyCell = document.createElement('td');
+            emptyCell.textContent = ''; // Cellule vide
+            emptyCell.style.border = '1px solid #FFFFFF';
+            emptyCell.style.padding = '8px';
+            row.appendChild(emptyCell);
+
+            tbody.appendChild(row);
+        });
+
+        table.appendChild(tbody);
+        card.appendChild(title);
+        card.appendChild(deleteButton);
+        card.appendChild(table);
+
+        return card;
+    }
+
     try {
         const events = await fetchData();
         const eventsList = document.getElementById('eventsList');
-        events.forEach(event => {
-            const div = document.createElement('div');
-            div.id = `event${event.id}`;
-            div.textContent = `${event.name} ${event.dates.join(', ')}, ${event.author}, ${event.description}`;
-            eventsList.appendChild(div);
-            div.style.backgroundColor = 'white';
-            div.style.borderRadius = '18px';
-            div.style.paddingTop = '18px';
-            div.style.width = '50%';
-            div.style.margin = '0 auto';
-            div.style.textAlign = 'center';
 
-            const deleteButton = createDeleteButton(event.id);
-            div.appendChild(deleteButton);
+        events.forEach(event => {
+            const eventCard = createEventCard(event);
+            eventsList.appendChild(eventCard);
         });
     } catch (error) {
         console.error("Une erreur s'est produite lors de la récupération des événements", error);
@@ -99,22 +173,8 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             try {
                 const createdEvent = await createEvent(newEvent);
-
-                const div = document.createElement('div');
-                div.id = `event${createdEvent.id}`;
-                div.textContent = `${createdEvent.name} ${createdEvent.dates.join(', ')}, ${createdEvent.author}, ${createdEvent.description}`;
-                let sectionEvent = document.getElementById('eventsList');
-                div.style.backgroundColor = 'white';
-                div.style.borderRadius = '18px';
-                div.style.paddingTop = '18px';
-                div.style.width = '50%';
-                div.style.margin = '0 auto';
-                div.style.textAlign = 'center';
-
-                const deleteButton = createDeleteButton(createdEvent.id);
-                div.appendChild(deleteButton);
-                sectionEvent.appendChild(div);
-
+                const eventCard = createEventCard(createdEvent);
+                document.getElementById('eventsList').appendChild(eventCard);
                 alert("Événement créé avec succès!");
             } catch (error) {
                 console.error("Une erreur s'est produite lors de la création de l'événement", error);
@@ -140,4 +200,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
         return isEmpty;
     }
+
+    function formatDate(date) {
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        return new Date(date).toLocaleDateString('fr-FR', options);
+    }
 });
+
+// Autres parties de votre code...
+
