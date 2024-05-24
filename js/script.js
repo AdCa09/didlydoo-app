@@ -28,7 +28,6 @@ modeButton.addEventListener("click", () => {
     }
 });
 
-
 // crée un événement dans le back via le form
 import { createEvent, fetchData } from './DataBackEnd.js';
 
