@@ -17,6 +17,7 @@ footer {
     padding: 1dvw;
     cursor: pointer;
     transition: 0.5s;
+
     &:hover {
         transform: scale(130%) rotate(45deg);
     }
@@ -25,9 +26,14 @@ footer {
 
 .github-name {
     display: none;
-    
-  }
-  
-  .github:hover + .github-name {
+    text-decoration: none;
+    color: var(--colorText);
+
+}
+a {
+    text-decoration: none;
+}
+
+.github:hover+.github-name {
     display: block;
-  }
+}

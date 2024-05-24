@@ -170,6 +170,12 @@ footer {
 
 .github-name {
   display: none;
+  text-decoration: none;
+  color: var(--colorText);
+}
+
+a {
+  text-decoration: none;
 }
 
 .github:hover + .github-name {
