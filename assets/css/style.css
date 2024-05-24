@@ -31,16 +31,6 @@ body {
   letter-spacing: 0.07rem;
 }
 
-body.light {
-  background-image: var(--colorBodyBackground);
-  color: var(--colorText);
-}
-
-body.dark {
-  background-image: var(--colorBodyBackground);
-  color: var(--colorTextDark);
-}
-
 article {
   display: flex;
   flex-direction: column;
@@ -58,7 +48,8 @@ input::placeholder {
   color: var(--colorText);
 }
 
-label, h2 {
+label,
+h2 {
   background-color: var(--colorEventBackground);
   color: var(--colorText);
   font-family: Lalezar;
@@ -108,7 +99,7 @@ label, h2 {
 
 #addEvent {
   font-family: Lalezar;
-  font-size: 1rem;
+  font-size: 3dvw;
   text-transform: lowercase;
   background-color: var(--colorButtonBackground);
   color: var(--colorText);
@@ -170,6 +161,19 @@ footer {
 
 .github {
   padding: 1dvw;
+  cursor: pointer;
+  transition: 0.5s;
+}
+.github:hover {
+  transform: scale(130%) rotate(45deg);
+}
+
+.github-name {
+  display: none;
+}
+
+.github:hover + .github-name {
+  display: block;
 }
 
 header {
