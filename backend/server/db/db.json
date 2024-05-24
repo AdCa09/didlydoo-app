@@ -1,1 +1,15 @@
-[]
+[
+  {
+    "id": "3836f648a846",
+    "name": "Evenement",
+    "author": "Adri",
+    "description": "jsdbsd",
+    "dates": [
+      "2024-06-08"
+    ],
+    "created_at": "2024-05-24T14:19:54.244Z",
+    "num_modification": 0,
+    "last_modification": "2024-05-24T14:19:54.244Z",
+    "attendees": []
+  }
+]
