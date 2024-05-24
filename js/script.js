@@ -2,7 +2,6 @@ import { saveThemeToLocalstorage } from "./darkmode.js";
 import { loadThemeFromLocalStorage } from "./darkmode.js";
 import { lightMode } from "./darkmode.js";
 import { darkMode } from "./darkmode.js";
-import { renderEvent } from "./renderEvent.js";
 
 const modeButton = document.querySelector(".mode");
 const html = document.querySelector("html");
@@ -105,7 +104,6 @@ document.getElementById("addDate").addEventListener("click", addNewDate);
 import { createEvent } from './DataBackEnd.js';
 import { updateEvent } from './DataBackEnd.js';
 import { deleteEvent } from "./DataBackEnd.js"
-
 const allInputs = document.querySelectorAll('input')
 const submitButton = document.getElementById('addDate');
 const eventTitle = document.getElementById('newEventName');
@@ -202,13 +200,3 @@ deleteButtons.forEach(deleteButton => {
         }
     });
 });
-
-
-
-// création de l'event et implémentation dans html
-
-const submitEvent = document.getElementById('submitEvent')
-
-submitEvent.addEventListener('click',()=> {
-    
-})
