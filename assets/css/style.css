@@ -229,22 +229,27 @@ header {
   margin-top: 20%;
   width: 80%;
   border: 3px solid;
-  border-color: var(--colorTextLight);
-  color: var(--colorTextLight);
+  border-color: var(--colorText);
+  color: var(--colorTex);
   padding: 1rem;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  box-shadow: var(--colorEventShadowLight);
+  box-shadow: var(--colorEventShadow);
 }
 #formModal .formContent .close {
-  color: var(--colorTextLight);
+  color: var(--colorText);
   position: absolute;
   right: 5%;
   font-size: 28px;
   font-weight: bold;
+  transition: 0.5s;
+}
+#formModal .formContent .close:hover {
+  transform: scale(130%) rotate(-45deg);
+  cursor: pointer;
 }
 #formModal .formContent h2 {
   text-align: center;
-  font-variant: small-caps;
+  letter-spacing: 0.07dvw;
 }/*# sourceMappingURL=style.css.map */
