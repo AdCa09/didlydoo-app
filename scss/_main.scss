@@ -9,15 +9,15 @@ body {
     letter-spacing: 0.07rem;
 }
 
-body.light {
-    background-image: var(--colorBodyBackground);
-    color: var(--colorText);
-}
+// body.light {
+//     background-image: var(--colorBodyBackground);
+//     color: var(--colorText);
+// }
 
-body.dark {
-    background-image: var(--colorBodyBackground);
-    color: var(--colorTextDark);
-}
+// body.dark {
+//     background-image: var(--colorBodyBackground);
+//     color: var(--colorTextDark);
+// }
 
 article {
     display: flex;
@@ -28,12 +28,14 @@ article {
 input {
     background-color: var(--colorBodyBackground);
     color: var(--colorText);
+
     &::placeholder {
         color: var(--colorText);
     }
 }
 
-label, h2 {
+label,
+h2 {
     background-color: var(--colorEventBackground);
     color: var(--colorText);
     font-family: Lalezar;
@@ -43,6 +45,7 @@ label, h2 {
 #newEventDescri {
     background-color: var(--colorBodyBackground);
     color: var(--colorText);
+
     &::placeholder {
         color: var(--colorText);
     }
@@ -81,7 +84,7 @@ label, h2 {
 
 #addEvent {
     font-family: Lalezar;
-    font-size: 1rem;
+    font-size: 3dvw;
     text-transform: lowercase;
     background-color: var(--colorButtonBackground);
     color: var(--colorText);
