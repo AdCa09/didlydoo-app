@@ -126,7 +126,41 @@ document.addEventListener('DOMContentLoaded', async () => {
                 emptyCell.style.border = '1px solid var(--colorText)';
                 emptyCell.style.padding = '8px';
                 row.appendChild(emptyCell);
-            }
+            };
+
+            tbody.appendChild(row);
+
+            
+        });
+
+        const attendees = new Set()
+        event.dates.forEach(d => {
+            d.attendees.forEach(a => {
+                attendees.add(a.name);
+            });
+        });
+
+        const attendeesArray = Array.from(attendees);
+
+        attendeesArray.forEach(aa => {
+            const row = document.createElement('tr');
+            const firstCell = document.createElement('td');
+            firstCell.textContent = aa;
+
+            row.appendChild(firstCell);
+
+            event?.dates?.forEach(d => {
+                const eventTableCell = document.createElement('td');
+                const foundAttendee = d?.attendees?.find(a => {
+                    return a.name == aa
+                });
+
+                if(foundAttendee) {
+                    eventTableCell.textContent = foundAttendee?.available? 'o' : 'x';
+                };
+
+                row.appendChild(eventTableCell);
+            });
 
             tbody.appendChild(row);
         });
